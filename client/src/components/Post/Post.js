@@ -1,11 +1,12 @@
 import "./Post.css"
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
-import { Users } from "../../dummyData";
-import { useState } from "react";
+import { useState ,useEffect} from "react";
+import axios from "axios";
 
 export default function Post({post}) {
     const [like,setLike] = useState(post.like)
     const [isLiked,setIsLiked] = useState(false)
+    const [user,setUser] = useState()
     const PF = process.env.REACT_APP_PUBLIC_FOLDER;
   
     const likeHandler =()=>{
@@ -13,6 +14,14 @@ export default function Post({post}) {
       setIsLiked(!isLiked)
       
     }
+    useEffect (() => {
+      const  fetchUser = async () =>{
+        const res = await axios.get(`users/${post.userId}`)
+        console.log(res)
+        setUser(res.data)
+      }
+      fetchUser();
+    },[])
    
     
   return (
@@ -20,9 +29,11 @@ export default function Post({post}) {
       <div className="postWrapper">
         <div className="postTop">
           <div className="postTopLeft">
-            <img className="postProfileImg" src={Users.filter(u=>u.id === post.userId)[0].profilePicture} alt="  "/>
+            <img className="postProfileImg" 
+            src={user.profilePicture}
+            alt=""/>
             <span className="postUsername">
-                {Users.filter(u=>u.id === post.userId)[0].username}
+                {user.username}
             </span>
             <span className="postDate">{post.date}</span>
           </div>
