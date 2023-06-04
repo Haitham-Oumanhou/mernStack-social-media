@@ -5,7 +5,7 @@ import Feed from "../../components/Feed/Feed";
 import Rightbar from "../../components/Rightbar/Rightbar";
 
 export default function Profile() {
-  const PF =process.env.REACT_APP_PUBLIC_FOLDER;
+  const PF = process.env.REACT_APP_PUBLIC_FOLDER;
   return (
     <>
       <Topbar />
@@ -27,12 +27,12 @@ export default function Profile() {
             </div>
             <div className="profileInfo">
                 <h4 className="profileInfoName">Bocchi san</h4>
-                <span className="profileInfoDesc">Hello my friends!  </span>
+                <span className="profileInfoDesc">Hello my friends!</span>
             </div>
           </div>
           <div className="profileRightBottom">
             <Feed />
-            <Rightbar/>
+            <Rightbar profile/>
           </div>
         </div>
       </div>
