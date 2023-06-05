@@ -50,7 +50,7 @@ export default function Rightbar({ profile }) {
               alt=""
               className="rightbarFollowingImg"
             />
-            <span className="rightbarFollowingName">John Carter</span>
+            <span className="rightbarFollowingName">Bocchi san</span>
           </div>
           <div className="rightbarFollowing">
             <img
