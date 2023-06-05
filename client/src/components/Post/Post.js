@@ -4,9 +4,9 @@ import { useState ,useEffect} from "react";
 import axios from "axios";
 
 export default function Post({post}) {
-    const [like,setLike] = useState(post.like)
-    const [isLiked,setIsLiked] = useState(false)
-    const [user,setUser] = useState()
+    const [like,setLike] = useState(post.like);
+    const [isLiked,setIsLiked] = useState(false);
+    const [user,setUser] = useState({});
     const PF = process.env.REACT_APP_PUBLIC_FOLDER;
   
     const likeHandler =()=>{
@@ -16,6 +16,7 @@ export default function Post({post}) {
     }
     useEffect (() => {
       const  fetchUser = async () =>{
+        //console.log(post.userId);
         const res = await axios.get(`users/${post.userId}`)
         console.log(res)
         setUser(res.data)

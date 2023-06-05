@@ -8,7 +8,7 @@ export default function Rightbar({ profile }) {
     return (
       <>
         <div className="birthdayContainer">
-          <img className="birthdayImg" src={`${PF}/gift.png`} alt="" />
+          <img className="birthdayImg" src={`${PF}gift.png`} alt="" />
           <span className="birthdayText">
             <b>Pola Foster</b> and <b>3 other friends</b> have a birhday today.
           </span>
