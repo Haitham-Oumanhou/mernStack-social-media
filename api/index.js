@@ -8,6 +8,7 @@ const userRoute = require("./routes/users");
 const authRoute = require("./routes/auth");
 const postRoute = require("./routes/posts");
 const cors = require("cors");
+const path = require("path");
 
 dotenv.config();
 
@@ -24,16 +25,15 @@ app.use(
   cors({
      origin: [ "https://localhost:3000" , "https://skullga-sm.onrender.com" ],}))
 
-   
 
 app.use("/api/auth", authRoute);
 app.use("/api/users", userRoute);
 app.use("/api/posts", postRoute);
 
-app.use(express.static(`client/build`))
-app.get(`*`, (req ,res) =>{
-    res.sendFile(`/client/build/index.html`)
-})  
+app.use(express.static(path.join(__dirname, "client/build")));
+app.get("*", (req, res) => {
+  res.sendFile(path.join(__dirname, "client/build/index.html"));
+});
 
 app.listen(8800, () => {
   console.log("Backend server is running!");
