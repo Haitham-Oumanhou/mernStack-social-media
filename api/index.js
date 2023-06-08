@@ -22,7 +22,12 @@ app.use(helmet());
 app.use(morgan("common"));
 app.use(
   cors({
-     origin: [ "https://http://localhost:3000" ,"https://skullga-sm.onrender.com" ],}))
+     origin: [ "https://localhost:3000" , "https://skullga-sm.onrender.com" ],}))
+
+app.use(express.static(`client/build`))
+app.get(`*` , (req ,res) =>{
+    res.sendFile(`${__dirname}/client/build/index.html`)
+})     
 
 app.use("/api/auth", authRoute);
 app.use("/api/users", userRoute);
