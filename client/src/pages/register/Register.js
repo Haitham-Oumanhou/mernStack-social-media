@@ -31,6 +31,10 @@ export default function Register() {
     }
   }
 
+  const toLogin = ()=>{
+    navigate("/login");
+  }
+
   return (
     <div className="login">
       <div className="loginWrapper">
@@ -50,7 +54,7 @@ export default function Register() {
             <input placeholder="Password Again" required ref={passwordAgain} className="loginInput" type="password"/>
 
             <button className="loginButton" type="submit">Sign Up</button>
-            <button className="loginRegisterButton">
+            <button className="loginRegisterButton" onClick={toLogin}>
                 Log into Account
             </button>
           </form>
