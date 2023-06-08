@@ -7,6 +7,7 @@ const morgan = require("morgan");
 const userRoute = require("./routes/users");
 const authRoute = require("./routes/auth");
 const postRoute = require("./routes/posts");
+const cors = require("cors");
 
 dotenv.config();
 
@@ -19,6 +20,9 @@ mongoose.connect(
 app.use(express.json());
 app.use(helmet());
 app.use(morgan("common"));
+app.use(
+  cors({
+     origin: [ "https://http://localhost:3000" ,"https://skullga-sm.onrender.com" ],}))
 
 app.use("/api/auth", authRoute);
 app.use("/api/users", userRoute);
