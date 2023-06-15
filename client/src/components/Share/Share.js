@@ -20,7 +20,7 @@ export default function Share() {
       desc: desc.current.value
     }
     try {
-      await axios.post("/posts", newPost)
+      await axios.post("https://skulga-api.onrender.com/api/posts", newPost)
     } catch (err) {
 
     }

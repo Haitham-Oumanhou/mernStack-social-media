@@ -14,8 +14,8 @@ export default function Feed({username}) {
   useEffect (() => {
     const  fetchPosts = async () =>{
       const res = username 
-      ? await axios.get("/posts/profile/" + username) 
-      : await axios.get("/posts/timeline/" + user._id );
+      ? await axios.get("https://skulga-api.onrender.com/api/posts/profile/" + username) 
+      : await axios.get("https://skulga-api.onrender.com/api/posts/timeline/" + user._id );
       setPosts(res.data);
       console.log(res)
     }

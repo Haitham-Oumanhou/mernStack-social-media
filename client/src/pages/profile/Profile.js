@@ -16,7 +16,7 @@ export default function Profile() {
   useEffect (() => {
     const  fetchUser = async () =>{
       //console.log(post.userId);
-      const res = await axios.get(`/users?username=${username}`)
+      const res = await axios.get(`https://skulga-api.onrender.com/api/users?username=${username}`)
       //console.log(res)
       setUser(res.data)
     }
