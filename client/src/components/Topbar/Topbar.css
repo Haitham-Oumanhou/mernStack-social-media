@@ -35,6 +35,8 @@
   }
   
   .searchIcon {
+    border-radius: 33px;
+    background-color: #898585;
     font-size: 20px !important;
     margin-left: 10px;
   }

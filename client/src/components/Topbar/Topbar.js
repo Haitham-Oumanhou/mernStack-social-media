@@ -1,13 +1,23 @@
 import "./Topbar.css"
 import {Home,Timeline, Search, Person, Chat, Notifications } from "@mui/icons-material/";
-import { useContext } from "react";
+import { useContext ,useRef } from "react";
 import {Link} from "react-router-dom"
 import { AuthContext } from "../../context/AuthContext";
+import {useNavigate} from "react-router";
+
+
 
 export default function Topbar() {
   const PF = process.env.REACT_APP_PUBLIC_FOLDER;
-
+  const navigate = useNavigate();
   const {user} = useContext(AuthContext);
+  const friendName = useRef();
+
+
+  const goToUser = ()=>{
+    
+    navigate(`/profile/${friendName.current.value}`);
+}
 
   return (
     <div className="topbarContainer">
@@ -17,13 +27,16 @@ export default function Topbar() {
         </Link>
       </div>
       <div className="topbarCenter">
-        <div className="searchbar">
-          <Search className="searchIcon" />
+        <form className="searchbar" onSubmit={goToUser}>
+          <Search className="searchIcon" onClick={goToUser} />
           <input
             placeholder="Search for friend, post or video"
             className="searchInput"
+            ref={friendName}
+            
           />
-        </div>
+          
+        </form>
       </div>
       <div className="topbarRight">
         <div className="topbarLinks">
