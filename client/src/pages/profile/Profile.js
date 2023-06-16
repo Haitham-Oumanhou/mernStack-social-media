@@ -33,7 +33,7 @@ export default function Profile() {
             <div className="profileCover">
               <img
                 className="profileCoverImg"
-                src={ user.coverPicture || PF+"/post/3.png"}
+                src={user.coverPicture? PF+user.coverPicture : PF+"/post/3.png"}
                 alt=""
               />
               <img
