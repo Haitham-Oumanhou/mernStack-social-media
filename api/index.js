@@ -8,6 +8,8 @@ const userRoute = require("./routes/users");
 const authRoute = require("./routes/auth");
 const postRoute = require("./routes/posts");
 
+
+
 dotenv.config();
 
 mongoose.connect(
@@ -19,6 +21,8 @@ mongoose.connect(
 app.use(express.json());
 app.use(helmet());
 app.use(morgan("common"));
+
+
 
 app.use("/api/auth", authRoute);
 app.use("/api/users", userRoute);

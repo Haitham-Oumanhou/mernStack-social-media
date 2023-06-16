@@ -6,34 +6,27 @@ export const Users = [
   },
   {
     id:2,
-    profilePicture: "person/2.png",
-    username: "Anxious Bocchi san",
+    profilePicture: "person/4.png",
+    username: "Kita",
   },
   {
     id:3,
-    profilePicture: "person/3.png",
-    username: "Huh san",
+    profilePicture: "person/8.png",
+    username: "Ryo",
   },
   {
     id:4,
-    profilePicture: "person/4.png",
-    username: "kita san",
+    profilePicture: "person/6.png",
+    username: "Nijika",
   },
+
   {
     id:5,
-    profilePicture: "person/5.png",
-    username: "Cool bocchi san",
+    profilePicture: "person/tuxon.png",
+    username: "Tux",
   },
-  {
-    id:6,
-    profilePicture: "person/6.png",
-    username: "My waife",
-  },
-  {
-    id:7,
-    profilePicture: "person/7.png",
-    username: "My wife 2",
-  },
+  
+  
 ];
 
 export const Posts = [
@@ -75,7 +68,7 @@ export const Posts = [
     id: 5,
     photo: "post/5.png",
     date: "5 hours ago",
-    userId: 5,
+    userId: 2,
     like: 23,
     comment: 5,
   },
@@ -92,7 +85,7 @@ export const Posts = [
     desc: "Never regret anything that made you smile.",
     photo: "post/7.png",
     date: "2 days ago",
-    userId: 7,
+    userId: 4,
     like: 52,
     comment: 3,
   },

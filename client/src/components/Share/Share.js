@@ -43,6 +43,7 @@ export default function Share() {
               <AddPhotoAlternateIcon htmlColor="tomato" className="shareIcon" />
               <span className="shareOptionText">Media</span>
               <input
+                name="file"
                 style={{ display: "none" }}
                 type="file" id="file"
                 accept=".png, .jpeg, .jpg, .webp"
